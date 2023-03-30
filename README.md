@@ -13,4 +13,4 @@ Video Review este o aplicație web de review a filmelor si a serialelor tv.
 * Un log al modificărilor pe site prin RSS
 
 ## Hosting pe Heroku
-Din pacate heroku nu mai oferă hosting gratuit deci nu puteți accesa ViR :(.
+Din păcate heroku nu mai oferă hosting gratuit deci nu puteți accesa ViR :(.
