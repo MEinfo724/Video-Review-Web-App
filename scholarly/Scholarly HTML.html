@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://w3c.github.io/scholarly-html/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="./Scholarly HTML_files/scholarly.min.css">
+    <script src="./Scholarly HTML_files/scholarly.min.js.download"></script>
+  </head>
+  <body prefix="schema:  http://schema.org">
+    <header>
+      <div class="banner">
+        <img src="./Scholarly HTML_files/scholarly-html.svg" width="227" height="50" alt="Scholarly HTML logo">
+        <div class="status">Community Draft</div>
+      </div>
+      <h1>Scholarly HTML</h1>
+    </header>
+    <!--
+      XXX
+      - check refs
+      - the math example has too much maths
+      - bring back some of the old style
+      - make semantics, validation, processing sub-sections of each structural element
+      - have a section before that for general constructs
+        - explain why use RDFa
+        - explain our patterns: RDFa, roles
+      - figure captions need to get set throughout
+      - dedication? see doc-dedication
+      - syntactic constraints (prefix)
+      - needs more sthenurines
+      - examples of everything
+      - some notes on using Semantic CSS
+      - needs more RDFa in the spec itself
+    -->
+    <div role="contentinfo">
+      <dl>
+        <dt>Authors</dt>
+        <dd>
+          <a href="https://github.com/liviuq">Petrache Liviu Andrei</a>,
+          <a href="https://github.com/MEinfo724">Marcu Eduard</a>
+        </dd>
+      </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Abstract</h2>
+      <p>
+        Acest document reprezinta fisa tehnica a proiectului Video Review Manager
+        creat de catre Andrei Liviu Petrache si Marcu Eduard din grupa 2A3
+        pentru materia Tehnologii Web.
+      </p>
+    </section>
+    <section id="introduction" role="doc-introduction">
+      <!-- review? -->
+      <h2>Introducere</h2>
+      <p>
+        Aplicatia Video Review Manager permite utilizatorilor sa isi exprime opiniile
+        cu ajutorul adnotarilor textuale.
+      </p>
+      <p>
+        Aceste video-clipuri sunt grupate in diferite categorii, pot fi adaugate in lista
+        utilizatorului de favorite si pot primi diferite rating-uri bazate pe
+        numarul de review-uri si de notele aferente.
+      </p>
+
+    </section>
+    <section id="structure">
+      <!-- review? -->
+      <h2>Structura</h2>
+      <p></p>
+      <section id="Root">
+        <!-- review? -->
+        <h3>Principalele functionalitati ale aplicatiei sunt:</h3>
+        <ul>
+          <li>Vizualizarea rating-urilor fiecarui video-clip</li>
+          <li>Inregistrarea si logarea in aplicatie urilizatorilor</li>
+          <li>Permiterea adnotarilor textuale pentru content-ul pus la dispozitie</li>
+          <li>Organizarea filmelor pe diverse categorii</li>
+          <li>Exportarea de statistici textuale(CSV) si grafice(SVG) </li>
+          <li>Implementarea fluxului de stiri RSS</li>
+          <li>Adaugarea/stergerea content-ului preferat in lista de "Favourites"</li>
+          <li>Exportarea acestei liste in format JSON/XML</li>
+        </ul>
+      </section>
+      <section id="article">
+        <!-- review? -->
+        <h3>Mediile de dezvoltare si rulare</h3>
+        <p>
+          Aplicatia este dezvoltata folosind HTML + SASS + PHP + D3 si unele elemente vor fi in javascript.
+          Se foloseste o metoda de version control, aceea fiind Git.
+        </p>
+        <p>
+          Proiectul va fi hostat cu ajutorul platformei Heroku si poate fi accesat
+          cu ajutorul unui browser web.
+        </p>
+      </section>
+    </section>
+    <section id="semantics">
+      <!-- review? -->
+      <h2>Detalii tehnice</h2>
+      <p>
+        Aici vor fi explicate functionalitatile principale ale aplicatiei.
+      </p>
+      <section id="person-org">
+        <!-- review? -->
+        <h3>Vizualizarea detaliilor si a review-urilor filmelor</h3>
+        <p>
+          Atunci cand utilizatorul intra pe web site-ul nostru, ii vor fi puse la dispozitie
+          diferite categorii de filme carora le poate vizualiza descrierea( directori, actori,
+          writer), comentariile altor utilizatori precum si rating-ul acordat. Fiecare pagina de film
+          va fi populata cu banner-ul creatiei, urmat de o lista de adnotari adaugate de alti useri,
+          similar cu pagina de video-clip de la Youtube.
+        </p>
+        <p>
+          In cazul de cautare specifica a unui video, se poate folosi bara de search.
+        </p>
+      </section>
+    
+      <section id="roles">
+        <!-- review? -->
+        <h3>Inregistrarea</h3>
+        <p>
+          Utilizatoului ii este pus la dispozitie un formular ce contine un username,
+          adresa de email si parola. Odata completate aceste campuri intr-un mod
+          valid, in baza de date a aplicatiei vor fi adaugate noile informatii
+          si utilizatorul va avea acces la functiile de comment si rating a filmelor.
+        </p>
+        <p>
+          In cazul in care exista deja respectivul username sau email in baza de date,
+          utilizatorului ii va fi comunicat acest lucru pentru a-si schimba informatiile
+          de register.
+        </p>
+
+      </section>
+
+      <section id="actions">
+        <!-- review? -->
+        <h3>Logarea</h3>
+        <p>
+          Pe aceeasi pagina cu Inregistrarea, utilizatorul se va putea conecta la
+          contul sau prin completarea numelui de utilizator si a parolei folosite la inregistrare.
+        </p>
+        <p>
+          In cazul in care numele de utilizator sau parola este gresita, utilizatorului
+          ii va fi comunicat un scurt mesaj despre acest fapt.
+        </p>
+      </section>
+
+      <section id="article-title-semantics">
+        <!-- review? -->
+        <h3>Adaugarea comentariilor</h3>
+        <p>
+          Utilizatorul poate intra pe pagina filmului dorit sau cautat si poate vedea toate
+          review-urile + notele adaugate de alti utilizatori. Daca acesta a indeplinit fazele de inregistrare
+          si logare, are posibilitatea de a-si exprima propriile opinii legate de filmul curent.
+        </p>
+        <p>
+          Daca persoana ce doreste sa publice un comentariu nu este logata, ii va fi comunicat faptul
+          ca nu se pot adauga review-uri anonime.
+        </p>
+
+      </section>
+      <section id="contentinfo-semantics">
+        <!-- review? -->
+        <h3>Lista "Favourites"</h3>
+        <p>
+          Fiecare utilizator care are cont pe aplicatie va avea o singura lista de filme preferate
+          pe care o poate popula cu diferite video-clipuri ce ii starnesc interesul. Fiecare film va
+          avea pe pagina sa un buton de "Add to Favourites" care va adauga filmul curent
+          in categoria de filme preferate a utilizatorului logat. Aceasta lista poate
+          fi exportata in format JSON/ XML.
+        </p>
+        <p>
+          Exista si un buton de a scoate un film de la favorite.
+        </p>
+        </section>
+        <section id="affiliations">
+          <!-- review? -->
+          <h4>Flux RSS</h4>
+          <p>
+            Fiecare adaugare de note sau comentarii va declansa un eveniment de tip "Publish"
+            pe RSS. Daca utilizatorul este abonat la acest serviciu, va primi notificari live in
+            legatura cu schimbarea clasamentului "Trending now" sau noi comentarii.
+          </p>
+        </section>
+
+        <section id="transformare-csv">
+          <!-- review? -->
+          <h4>CSV si SVG</h4>
+          <p>
+            Utilizatorul primeste informatii despre toate filmele din baza de date in format CSV si poate vedea un bar char cu cele mai populare filme in SVG.
+          </p>
+        </section>
+
+    </section>
+<section id="biblio-references">
+  <h2>References</h2>
+  <dl>
+    <dt id="ref-NYT">JavaScript tutorial</dt>
+    <cite property="schema:name"><a href="https://www.youtube.com/watch?v=W6NZfCO5SIk">Youtube tutorial</a></cite>
+    <dt id="ref-NYT">JSON to XML</dt>
+    <cite property="schema:name"><a href="https://www.delftstack.com/howto/javascript/json-to-xml-javascript/">Delft Stack</a></cite> 
+ </dl>
+</section>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title placeholder</title>
+    <link rel="stylesheet" href="sass/movie_template.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="nav" id="nav">
+        <img src="img/test_icon.png" alt="vir_icon" class="nav__logo" onclick="location.href='index.php'">
+        <div class="wrapper">
+            <img class="wrapper__search" src="img/search_icon.png" alt="search"/>
+            <input class="search" placeholder="Search" type="text" id="search__bar">
+        </div>
+        <div class="nav__buttons" id="header__buttons">
+            <button id = "user__name" type="button" class="button--toggle" onclick="location.href='ViR.php'">Login/Register</button>
+            <button type="button" class="button--toggle" onclick="location.href='aboutusViR.php'">About Us</button>
+            <button type="button" class="button--toggle" onclick="location.href='contactViR.html'">Contact</button>
+            <button type="button" class="button--toggle" id="csv__button">CSV</button>
+            <button type="button" class="button--toggle" id="svg__button" onclick="location.href='test_d3.php'">SVG</button>
+            <button type="button" class="button--toggle" id="rss__button">RSS</button>
+            <button type="button" class="button--toggle" id="help__button" onclick="location.href='help.php'">Help</button>
+        </div>
+    </div>
+    <div class="flexbox-container">
+        <div class="flexbox-item flexbox-item-1">
+            <img id="banner" src="https://picsum.photos/241/400" alt="a simple image" class="poster">
+        </div>
+        <div class="flexbox-item flexbox-item-2">
+            <h1>
+                Synopsis:
+            </h1>
+            <h2 id="synopsis">
+               
+            </h2>
+            <p class="rating" id="rating">Rating: </p>
+            <p class="actors" id="actors">Actors: </p>
+            <p class="director" id="director">Director: </p>
+            <p class="writer" id="writer">Writer: </p>
+            <p class="writer">
+                <button id="addfav__button" type="button" class="button--toggle">Add to favourites</button>
+                <button id="rmfav__button" type="button" class="button--toggle">Remove from favourites</button>
+                <button id="getfav__button__xml" type="button" class="button--toggle" onclick="location.href='favourites_movies_user_xml.php'">Get XML favourites</button>
+                <button id="getfav__button__json" type="button" class="button--toggle" onclick="location.href='favourites_movies_user.php'">Get JSON favourites</button>
+            </p>
+        </div>
+    </div>
+    <div class="info">
+        <h3>
+            Information
+        </h3>
+        <div class="info_child">
+            <p class="status" id="status">Status: </p>
+            <p class="aired" id="aired">Aired: </p>
+            <p class="genre" id="genre">Genre: </p>
+        </div>
+    </div>
+    
+    <div class="comment_box" id="reviews">
+            <h6>Comment Section </h6>
+        <form class="hidden_form">
+            <div class="flexform">
+                <textarea spellcheck="false" id="text__area" class="hidden_rev" placeholder="Your Review" required></textarea>
+                <select class ="rating__form" name="rating" id="rating__value" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option> 
+                </select>
+            </div>
+            <input  id="hidden_form_btn" class="hidden_form_btn" type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script src="js/editMovieTemplate.js" defer></script>
+    <script src="js/editIndex.js"></script>
+</body> 
+</html>
+
